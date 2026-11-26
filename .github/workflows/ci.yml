@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build universal app and DMG
+        run: bash scripts/build.sh
+      - name: Check the binary is universal
+        run: lipo -info build/ClipBMac.app/Contents/MacOS/ClipBMac
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ClipBMac-dmg
+          path: build/ClipBMac.dmg

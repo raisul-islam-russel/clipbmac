@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipBMac – Free Clipboard History Manager for Mac (Windows Win+V for macOS)</title>
+<meta name="description" content="ClipBMac is a free, open-source clipboard history manager for macOS. Press a hotkey to see everything you copied and paste it instantly, just like Windows Win+V. Native Swift, no tracking.">
+<link rel="canonical" href="https://raisul-islam-russel.github.io/clipbmac/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#3a5af0">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ClipBMac">
+<meta property="og:title" content="ClipBMac – Clipboard History for Mac, like Windows Win+V">
+<meta property="og:description" content="Free, open-source macOS clipboard manager. One hotkey, searchable history of text and images, instant paste.">
+<meta property="og:url" content="https://raisul-islam-russel.github.io/clipbmac/">
+<meta property="og:image" content="https://raisul-islam-russel.github.io/clipbmac/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ClipBMac – Clipboard History for Mac">
+<meta name="twitter:description" content="Free, open-source macOS clipboard manager inspired by Windows Win+V.">
+<meta name="twitter:image" content="https://raisul-islam-russel.github.io/clipbmac/social-preview.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ClipBMac",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "macOS 13 or later",
+  "description": "Free, open-source clipboard history manager for macOS with a global hotkey, search, pinning and auto-paste, inspired by Windows Win+V.",
+  "url": "https://raisul-islam-russel.github.io/clipbmac/",
+  "downloadUrl": "https://github.com/raisul-islam-russel/clipbmac/releases/latest",
+  "codeRepository": "https://github.com/raisul-islam-russel/clipbmac",
+  "license": "https://opensource.org/licenses/MIT",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Raisul Islam Russel", "url": "https://github.com/raisul-islam-russel" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a Windows Win+V equivalent for Mac?",
+      "acceptedAnswer": { "@type": "Answer", "text": "macOS has no built-in clipboard history. ClipBMac is a free, open-source app that gives you the same experience: one hotkey, a list of everything you copied, click to paste." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ClipBMac work on Apple Silicon and Intel Macs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The release is a universal binary and requires macOS 13 Ventura or newer." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ClipBMac send my clipboard anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. ClipBMac has no network access. History is stored locally on your Mac." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does ClipBMac need Accessibility permission?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only to simulate the Command+V keystroke after you pick an item. You can deny it and paste manually." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root { --bg:#0e1020; --card:#171a31; --text:#e9ebff; --muted:#a3a8d1; --accent:#6b83ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  header { padding:72px 0 40px; text-align:center; }
+  h1 { font-size:2.6rem; line-height:1.15; margin:0 0 16px; }
+  h2 { font-size:1.6rem; margin:0 0 16px; }
+  p.lead { font-size:1.2rem; color:var(--muted); max-width:640px; margin:0 auto 32px; }
+  .btn { display:inline-block; padding:14px 26px; border-radius:12px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; margin:6px; }
+  .btn.alt { background:transparent; border:1px solid var(--muted); color:var(--text); }
+  section { padding:40px 0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .card { background:var(--card); border-radius:14px; padding:20px; }
+  .card h3 { margin:0 0 6px; font-size:1.05rem; }
+  .card p { margin:0; color:var(--muted); font-size:.95rem; }
+  code, kbd { background:#23274a; padding:2px 7px; border-radius:6px; font-size:.9em; }
+  pre { background:#0a0b18; padding:16px; border-radius:12px; overflow:auto; }
+  details { background:var(--card); border-radius:12px; padding:14px 18px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  footer { text-align:center; color:var(--muted); padding:40px 0 60px; font-size:.9rem; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Clipboard history for Mac,<br>like Windows <kbd>Win</kbd> + <kbd>V</kbd></h1>
+    <p class="lead">ClipBMac is a free, open-source clipboard manager for macOS. Press one hotkey, see everything you copied, and paste it instantly.</p>
+    <a class="btn" href="https://github.com/raisul-islam-russel/clipbmac/releases/latest">Download for macOS</a>
+    <a class="btn alt" href="https://github.com/raisul-islam-russel/clipbmac">View on GitHub</a>
+    <p style="color:var(--muted);font-size:.9rem">Universal (Apple Silicon + Intel) · macOS 13+ · MIT licensed</p>
+  </header>
+
+  <section>
+    <h2>Everything you copied, one hotkey away</h2>
+    <div class="grid">
+      <div class="card"><h3>Clipboard history</h3><p>Text and images, last 50 items, with pinned items that never expire.</p></div>
+      <div class="card"><h3>Instant paste</h3><p>Pick an item and it is pasted into the app you were using.</p></div>
+      <div class="card"><h3>Type to search</h3><p>Open the panel and start typing to filter your history.</p></div>
+      <div class="card"><h3>Keyboard first</h3><p><kbd>↑</kbd><kbd>↓</kbd> move, <kbd>⏎</kbd> paste, <kbd>⌘P</kbd> pin, <kbd>⌘⌫</kbd> delete.</p></div>
+      <div class="card"><h3>Private by design</h3><p>No network, no account, no tracking. Password-manager items are ignored.</p></div>
+      <div class="card"><h3>Native and tiny</h3><p>Pure Swift and SwiftUI menu-bar app. No dependencies.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Install in 30 seconds</h2>
+    <ol>
+      <li>Download <code>ClipBMac.dmg</code> from the <a href="https://github.com/raisul-islam-russel/clipbmac/releases/latest">latest release</a>.</li>
+      <li>Drag ClipBMac to Applications and open it.</li>
+      <li>Press <kbd>⌘</kbd><kbd>⇧</kbd><kbd>V</kbd> anywhere to open your clipboard history.</li>
+    </ol>
+    <p>Or build from source:</p>
+<pre>git clone https://github.com/raisul-islam-russel/clipbmac.git
+cd clipbmac &amp;&amp; bash scripts/build.sh</pre>
+  </section>
+
+  <section>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Is there a Windows Win+V equivalent for Mac?</summary><p>macOS has no built-in clipboard history. ClipBMac gives you the same experience: one hotkey, a list of everything you copied, click to paste.</p></details>
+    <details><summary>Does it work on Apple Silicon and Intel Macs?</summary><p>Yes. The release is a universal binary and requires macOS 13 Ventura or newer.</p></details>
+    <details><summary>Does ClipBMac send my clipboard anywhere?</summary><p>No. It has no network access and stores history locally on your Mac.</p></details>
+    <details><summary>Why does it need Accessibility permission?</summary><p>Only to simulate <kbd>⌘V</kbd> after you pick an item. You can deny it and paste manually.</p></details>
+  </section>
+
+  <footer>
+    ClipBMac is MIT licensed · Made by <a href="https://github.com/raisul-islam-russel">Raisul Islam Russel</a> ·
+    <a href="https://github.com/raisul-islam-russel/clipbmac/issues">Report an issue</a>
+  </footer>
+</div>
+</body>
+</html>

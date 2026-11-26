@@ -1,0 +1,11 @@
+.DS_Store
+build/
+*.dmg
+*.app
+*.iconset
+*.icns
+.swiftpm/
+.build/
+xcuserdata/
+DerivedData/
+*.xcworkspace

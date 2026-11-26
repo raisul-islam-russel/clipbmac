@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build DMG
+        run: VERSION="${GITHUB_REF_NAME#v}" bash scripts/build.sh
+      - name: Checksum
+        run: shasum -a 256 build/ClipBMac.dmg | tee build/ClipBMac.dmg.sha256
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            build/ClipBMac.dmg
+            build/ClipBMac.dmg.sha256

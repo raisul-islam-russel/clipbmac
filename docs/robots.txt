@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raisul-islam-russel.github.io/clipbmac/sitemap.xml
